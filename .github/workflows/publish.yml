@@ -1,0 +1,48 @@
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Check that the release tag matches the package version
+        run: |
+          VERSION=$(python -c "import re, pathlib; print(re.search(r'__version__ = \"(.+?)\"', pathlib.Path('src/skreduce/__init__.py').read_text()).group(1))")
+          echo "Package version: $VERSION, release tag: ${{ github.event.release.tag_name }}"
+          test "v$VERSION" = "${{ github.event.release.tag_name }}"
+      - name: Test
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[test]"
+          python -m pytest
+      - name: Build
+        run: |
+          python -m pip install build twine
+          python -m build
+          python -m twine check --strict dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/scikit-reduce
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
