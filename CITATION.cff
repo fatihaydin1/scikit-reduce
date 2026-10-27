@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper of the method you use."
 title: "scikit-reduce: scikit-learn compatible data reduction methods"
-version: 0.1.0
+version: 0.1.1
 license: MIT
 repository-code: "https://github.com/fatihaydin1/scikit-reduce"
 authors:

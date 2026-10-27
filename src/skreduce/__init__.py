@@ -9,6 +9,6 @@
 from ._bldod import BLDOD
 from ._nis import NIS
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = ["BLDOD", "NIS", "__version__"]

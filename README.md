@@ -14,13 +14,13 @@ Both estimators pass scikit-learn's estimator checks (`check_estimator`).
 ## Installation
 
 ```bash
-pip install git+https://github.com/fatihaydin1/scikit-reduce
+pip install scikit-reduce
 ```
 
-The only dependencies are NumPy and scikit-learn (≥ 1.6). To use `NIS` inside a pipeline, also install imbalanced-learn:
+The only dependencies are NumPy and scikit-learn (≥ 1.6). To use `NIS` inside a pipeline, install imbalanced-learn as well:
 
 ```bash
-pip install imbalanced-learn
+pip install "scikit-reduce[imblearn]"
 ```
 
 ## NIS: Nimble Instance Selection
@@ -81,7 +81,7 @@ Remaining differences, all deliberate:
 
 ## Examples
 
-See [`examples/`](examples/) for a cross-validated NIS pipeline and a BLDOD example on synthetic data.
+See [`examples/`](https://github.com/fatihaydin1/scikit-reduce/tree/main/examples) for a cross-validated NIS pipeline and a BLDOD example on synthetic data.
 
 ## Citing
 

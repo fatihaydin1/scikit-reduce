@@ -9,7 +9,7 @@ description = "scikit-learn compatible data reduction methods: Nimble Instance S
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
-authors = [{ name = "Fatih Aydın", email = "fatih.aydin@balikesir.edu.tr" }]
+authors = [{ name = "Fatih Aydın" }]
 requires-python = ">=3.10"
 dependencies = [
     "numpy>=1.22",
