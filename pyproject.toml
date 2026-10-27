@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "scikit-reduce"
+dynamic = ["version"]
+description = "scikit-learn compatible data reduction methods: Nimble Instance Selection (NIS) and BLDOD outlier detection."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Fatih Aydın", email = "fatih.aydin@balikesir.edu.tr" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.22",
+    "scikit-learn>=1.6",
+]
+keywords = [
+    "machine learning",
+    "scikit-learn",
+    "instance selection",
+    "prototype selection",
+    "data reduction",
+    "outlier detection",
+    "anomaly detection",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+imblearn = ["imbalanced-learn>=0.13"]
+test = ["pytest>=7", "pandas", "imbalanced-learn>=0.13"]
+
+[project.urls]
+Homepage = "https://github.com/fatihaydin1/scikit-reduce"
+Issues = "https://github.com/fatihaydin1/scikit-reduce/issues"
+
+[tool.hatch.version]
+path = "src/skreduce/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/skreduce"]
+
+[tool.pytest.ini_options]
+testpaths = ["src", "tests"]
+addopts = "--doctest-modules"

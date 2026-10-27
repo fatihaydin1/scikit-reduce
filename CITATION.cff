@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper of the method you use."
+title: "scikit-reduce: scikit-learn compatible data reduction methods"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/fatihaydin1/scikit-reduce"
+authors:
+  - family-names: "Aydın"
+    given-names: "Fatih"
+    affiliation: "Balıkesir University"
+    orcid: "https://orcid.org/0000-0001-9679-0403"
+references:
+  - type: article
+    title: "Unsupervised instance selection via conjectural hyperrectangles"
+    authors:
+      - family-names: "Aydın"
+        given-names: "Fatih"
+    journal: "Neural Computing and Applications"
+    volume: 35
+    start: 5335
+    end: 5349
+    year: 2023
+    doi: "10.1007/s00521-022-07974-z"
+  - type: article
+    title: "Boundary-aware local density-based outlier detection"
+    authors:
+      - family-names: "Aydın"
+        given-names: "Fatih"
+    journal: "Information Sciences"
+    volume: 647
+    start: 119520
+    year: 2023
+    doi: "10.1016/j.ins.2023.119520"
